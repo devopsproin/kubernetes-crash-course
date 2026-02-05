@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-crash-course-config
+data:
+  TITLE_TEXT: "Congratulations 🎉"
+  SUB_TEXT: "This UI is configurable using ConfigMap!"
+  BOX_COLOR: "cyan"
+  TEXT_COLOR: "white"
+  GIFT_GIF: "gift.gif"

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-crash-course
+  labels:
+    app: k8s-crash-course
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-crash-course
+  template:
+    metadata:
+      labels:
+        app: k8s-crash-course
+    spec:
+      containers:
+        - name: k8s-crash-course
+          image: devopsprosamples/k8s-crash-course:v1
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: k8s-crash-course-config
